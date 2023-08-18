@@ -22,7 +22,7 @@ public class Sync_data_manager : MonoBehaviour
         WWWForm frm_list_syn = this.app.carrot.frm_act("syn_list");
         frm_list_syn.AddField("user_id", this.app.carrot.user.get_id_user_login());
         frm_list_syn.AddField("user_lang", this.app.carrot.user.get_lang_user_login());
-        this.app.carrot.send(frm_list_syn, act_done_show_list_sync); 
+        //this.app.carrot.send(frm_list_syn, act_done_show_list_sync); 
     }
 
     private void act_done_show_list_sync(string s_data)
@@ -69,7 +69,7 @@ public class Sync_data_manager : MonoBehaviour
         this.app.carrot.play_sound_click();
         WWWForm frm_syn_delete = this.app.carrot.frm_act("delete_syn_data");
         frm_syn_delete.AddField("id_syn", this.id_sync_delete_temp);
-        this.app.carrot.send(frm_syn_delete, act_after_delete_sync);
+        //this.app.carrot.send(frm_syn_delete, act_after_delete_sync);
     }
 
     private void delete_sync_no()
@@ -108,7 +108,7 @@ public class Sync_data_manager : MonoBehaviour
         this.app.carrot.play_sound_click();
         WWWForm frm_syn_load = this.app.carrot.frm_act("load_sync_data");
         frm_syn_load.AddField("id_syn", this.id_sync_load_temp);
-        this.app.carrot.send(frm_syn_load, act_after_load_sync_done);
+        //this.app.carrot.send(frm_syn_load, act_after_load_sync_done);
     }
 
     private void act_after_load_sync_done(string s_data)
@@ -177,7 +177,7 @@ public class Sync_data_manager : MonoBehaviour
         frm_syn.AddField("user_lang", this.app.carrot.user.get_lang_user_login());
         frm_syn.AddField("syn_data", s_json);
         if(this.app.carrot.model_app==ModelApp.Develope) Debug.Log("syn data online...:" + s_json);
-        this.app.carrot.send(frm_syn, act_sync_data_success);
+        //this.app.carrot.send(frm_syn, act_sync_data_success);
     }
 
     private void act_sync_data_success(string s_data)
