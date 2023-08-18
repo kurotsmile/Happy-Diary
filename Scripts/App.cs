@@ -31,12 +31,14 @@ public class App : MonoBehaviour
         this.note_manager.load();
         this.view_day.load_view_day();
 
+        /*
         Carrot_Box_Item item_syn_user = this.carrot.user.create_item_field_user_login();
         item_syn_user.set_icon(this.syn_data.icon_sync);
         item_syn_user.set_title(PlayerPrefs.GetString("syn_title", "Backup and sync calendar data"));
         item_syn_user.set_tip(PlayerPrefs.GetString("syn_tip", "Sync and backup data with carrot account"));
         item_syn_user.set_lang_data("syn_data", "syn_data_tip");
         item_syn_user.set_act(()=>this.syn_data.show_menu_sync());  
+        */
     }
 
     private void check_exit_app()
