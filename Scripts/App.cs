@@ -22,6 +22,7 @@ public class App : MonoBehaviour
         this.carrot.shop.onCarrotPaySuccess +=this.carrot_by_success;
         this.carrot.ads.onRewardedSuccess+=this.on_ads_rewarded_success;
         this.carrot.act_after_delete_all_data = this.calendar.freshen_calander_day_in_month;
+        this.carrot.game.load_bk_music(this.sound[2]);
 
         Thread.CurrentThread.CurrentCulture = new CultureInfo(PlayerPrefs.GetString("lang", "en"));
         this.emoji_manager.load_emoji();
@@ -60,12 +61,14 @@ public class App : MonoBehaviour
         this.play_sound();
         Carrot_Box box_setting = this.carrot.Create_Setting();
 
+        /*
         Carrot_Box_Item item_syn_data = box_setting.create_item_of_top();
         item_syn_data.set_icon(this.syn_data.icon_sync);
         item_syn_data.set_title(PlayerPrefs.GetString("syn_title", "Backup and sync calendar data"));
         item_syn_data.set_tip(PlayerPrefs.GetString("syn_tip", "Sync and backup data with carrot account"));
         item_syn_data.set_lang_data("syn_title", "syn_tip");
         item_syn_data.set_act(this.act_check_syn_data);
+        */
 
         Carrot_Box_Item item_emoji_package = box_setting.create_item_of_top();
         item_emoji_package.set_icon_white(this.emoji_manager.get_icon_emoji_package_cur());
