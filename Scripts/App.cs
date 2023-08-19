@@ -160,5 +160,4 @@ public class App : MonoBehaviour
     {
         this.emoji_manager.on_rewarded_success_package();
     }
-
 }
