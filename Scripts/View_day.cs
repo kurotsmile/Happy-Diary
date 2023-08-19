@@ -62,6 +62,7 @@ public class View_day : MonoBehaviour
     public void show(Calendar_item c, int type_show = -1)
     {
         this.item_calendar_temp = c;
+        this.GetComponent<App>().carrot.ads.Destroy_Banner_Ad();
         this.GetComponent<App>().carrot.ads.show_ads_Interstitial();
 
         this.txt_title_view_day.text = c.get_datetime().ToString("dddd dd/MMMM/yyyy");
@@ -388,6 +389,7 @@ public class View_day : MonoBehaviour
 
     public void close()
     {
+        this.GetComponent<App>().carrot.ads.create_banner_ads();
         this.panel_view_day.SetActive(false);
         this.GetComponent<App>().play_sound();
     }
