@@ -51,8 +51,10 @@ public class Emoji_Manager : MonoBehaviour
             if (i_p.is_buy)
             {
                 i_p.obj_btn_buy.SetActive(true);
-                i_p.obj_btn_rewarded_ads.SetActive(true);
-
+                if(GetComponent<App>().carrot.os_app==OS.Android)
+                    i_p.obj_btn_rewarded_ads.SetActive(true);
+                else
+                    i_p.obj_btn_rewarded_ads.SetActive(false);
             }
             else
             {
