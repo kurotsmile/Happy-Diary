@@ -2522,7 +2522,7 @@ MonoBehaviour:
   color_menu_sel:
     serializedVersion: 2
     rgba: 4278228479
-  sp_icon_add: {fileID: 21300000, guid: 3be75487ee8c2e547b9c6a1f6b05bed0, type: 3}
+  sp_icon_add: {fileID: 21300000, guid: 6a030557cb6349f4b874607aef63c14b, type: 3}
   sp_icon_edit: {fileID: 21300000, guid: b4e92c014b049034c867d4bccc3bea7b, type: 3}
   item_day_info_prefab: {fileID: 1004263820107293073, guid: e31bfbc03a5758e42b2b4b05e90756d4, type: 3}
   area_list_day_info: {fileID: 3085768709760904685}
@@ -2605,8 +2605,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 669fe931980821142a79656564601e95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sp_remind_on: {fileID: 21300000, guid: 61d54a960d2378341943877106a80445, type: 3}
-  sp_remind_off: {fileID: 21300000, guid: 2108398c64e417a46a8575cee7e08d63, type: 3}
+  sp_remind_on: {fileID: 21300000, guid: a5794b44409855d419356deb8725e55d, type: 3}
+  sp_remind_off: {fileID: 21300000, guid: 6bc658b4707c5224996deb57f1ae8b83, type: 3}
   obj_btn_list_all_notice: {fileID: 5217080037057317810}
 --- !u!114 &5072215473265944371
 MonoBehaviour:
