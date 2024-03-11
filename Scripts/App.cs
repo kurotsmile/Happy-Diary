@@ -105,7 +105,7 @@ public class App : MonoBehaviour
                 this.calendar.freshen_calander_day_in_month();
                 this.notice.re_subscribe_reminder_notice();
 
-                this.carrot.lang.load_lang_emp();
+                this.carrot.lang.Load_lang_emp();
                 this.carrot.ads.show_ads_Interstitial();
             }
         }
