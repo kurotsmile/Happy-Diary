@@ -88,7 +88,6 @@ public class App : MonoBehaviour
             item_remind_app.set_icon(this.notice.sp_remind_off);
         item_remind_app.set_act(() => this.notice.btn_change_status_remind_app(item_remind_app));
 
-        box_setting.set_item_size(new Vector2(100f, 69f));
         box_setting.update_gamepad_cosonle_control();
         box_setting.update_color_table_row();
         box_setting.set_act_before_closing(actr_close_setting);
