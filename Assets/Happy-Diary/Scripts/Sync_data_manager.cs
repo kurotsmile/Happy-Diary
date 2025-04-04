@@ -61,14 +61,16 @@ public class Sync_data_manager : MonoBehaviour
     {
         this.app.carrot.play_sound_click();
         this.id_sync_delete_temp = s_id;
-        this.msg_quesion_sync=this.app.carrot.show_msg(PlayerPrefs.GetString("syn_title", "Backup and sync calendar data"), PlayerPrefs.GetString("delete_tip", "Are you sure you want to delete the selected item?"), delete_sync_yes, delete_sync_no);
+        this.msg_quesion_sync=this.app.carrot.Show_msg(this.app.carrot.lang.Val("syn_title", "Backup and sync calendar data"), this.app.carrot.lang.Val("delete_tip", "Are you sure you want to delete the selected item?"), delete_sync_yes, delete_sync_no);
     }
 
     private void delete_sync_yes()
     {
+        /*
         this.app.carrot.play_sound_click();
         WWWForm frm_syn_delete = this.app.carrot.frm_act("delete_syn_data");
         frm_syn_delete.AddField("id_syn", this.id_sync_delete_temp);
+        */
         //this.app.carrot.send(frm_syn_delete, act_after_delete_sync);
     }
 
@@ -82,9 +84,9 @@ public class Sync_data_manager : MonoBehaviour
     {
         this.id_sync_load_temp = s_id;
         this.app.carrot.play_sound_click();
-        this.msg_quesion_sync = this.app.carrot.show_msg(PlayerPrefs.GetString("syn_recover", "Data recovery"), "Select data synchronization type");
-        this.msg_quesion_sync.add_btn_msg(PlayerPrefs.GetString("syn_recover_replace", "Replace"), act_sync_replace);
-        this.msg_quesion_sync.add_btn_msg(PlayerPrefs.GetString("syn_recover_additional", "Additional"), act_sync_additional);
+        this.msg_quesion_sync = this.app.carrot.Show_msg(this.app.carrot.lang.Val("syn_recover", "Data recovery"), "Select data synchronization type");
+        this.msg_quesion_sync.add_btn_msg(this.app.carrot.lang.Val("syn_recover_replace", "Replace"), act_sync_replace);
+        this.msg_quesion_sync.add_btn_msg(this.app.carrot.lang.Val("syn_recover_additional", "Additional"), act_sync_additional);
     }
 
     private void act_sync_replace()
@@ -105,9 +107,11 @@ public class Sync_data_manager : MonoBehaviour
 
     private void act_sync()
     {
+        /*
         this.app.carrot.play_sound_click();
         WWWForm frm_syn_load = this.app.carrot.frm_act("load_sync_data");
         frm_syn_load.AddField("id_syn", this.id_sync_load_temp);
+        */
         //this.app.carrot.send(frm_syn_load, act_after_load_sync_done);
     }
 
@@ -155,7 +159,7 @@ public class Sync_data_manager : MonoBehaviour
         }
 
         this.app.calendar.freshen_calander_day_in_month();
-        this.app.carrot.show_msg("Successful data recovery!");
+        this.app.carrot.Show_msg("Successful data recovery!");
     }
 
     private void act_after_delete_sync(string s_data)
@@ -167,6 +171,7 @@ public class Sync_data_manager : MonoBehaviour
     [ContextMenu("syn data online")]
     public void syn_data_online()
     {
+        /*
         string s_json = "{";
         s_json+= "\"emoji\":" + this.app.emoji_manager.get_s_data_syn()+",";
         s_json += "\"notice\":" + this.app.notice.get_s_data_syn();
@@ -178,6 +183,7 @@ public class Sync_data_manager : MonoBehaviour
         frm_syn.AddField("syn_data", s_json);
         if(this.app.carrot.model_app==ModelApp.Develope) Debug.Log("syn data online...:" + s_json);
         //this.app.carrot.send(frm_syn, act_sync_data_success);
+        */
     }
 
     private void act_sync_data_success(string s_data)

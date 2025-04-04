@@ -20,6 +20,7 @@ public class App : MonoBehaviour
     {
         Screen.fullScreen = true;
         this.carrot.Load_Carrot(this.check_exit_app);
+        this.ads.On_Load();
         this.carrot.shop.onCarrotPaySuccess +=this.carrot_by_success;
         this.ads.onRewardedSuccess+=this.on_ads_rewarded_success;
         this.carrot.act_after_delete_all_data = this.calendar.freshen_calander_day_in_month;
@@ -36,8 +37,8 @@ public class App : MonoBehaviour
         /*
         Carrot_Box_Item item_syn_user = this.carrot.user.create_item_field_user_login();
         item_syn_user.set_icon(this.syn_data.icon_sync);
-        item_syn_user.set_title(PlayerPrefs.GetString("syn_title", "Backup and sync calendar data"));
-        item_syn_user.set_tip(PlayerPrefs.GetString("syn_tip", "Sync and backup data with carrot account"));
+        item_syn_user.set_title(this.carrot.lang.Val("syn_title", "Backup and sync calendar data"));
+        item_syn_user.set_tip(this.carrot.lang.Val("syn_tip", "Sync and backup data with carrot account"));
         item_syn_user.set_lang_data("syn_data", "syn_data_tip");
         item_syn_user.set_act(()=>this.syn_data.show_menu_sync());  
         */
@@ -65,23 +66,23 @@ public class App : MonoBehaviour
         /*
         Carrot_Box_Item item_syn_data = box_setting.create_item_of_top();
         item_syn_data.set_icon(this.syn_data.icon_sync);
-        item_syn_data.set_title(PlayerPrefs.GetString("syn_title", "Backup and sync calendar data"));
-        item_syn_data.set_tip(PlayerPrefs.GetString("syn_tip", "Sync and backup data with carrot account"));
+        item_syn_data.set_title(this.carrot.lang.Val("syn_title", "Backup and sync calendar data"));
+        item_syn_data.set_tip(this.carrot.lang.Val("syn_tip", "Sync and backup data with carrot account"));
         item_syn_data.set_lang_data("syn_title", "syn_tip");
         item_syn_data.set_act(this.act_check_syn_data);
         */
 
         Carrot_Box_Item item_emoji_package = box_setting.create_item_of_top();
         item_emoji_package.set_icon_white(this.emoji_manager.get_icon_emoji_package_cur());
-        item_emoji_package.set_title(PlayerPrefs.GetString("emoji", "Emoji"));
-        item_emoji_package.set_tip(PlayerPrefs.GetString("emoji_tip", "Change emoji packs for calendar"));
+        item_emoji_package.set_title(this.carrot.lang.Val("emoji", "Emoji"));
+        item_emoji_package.set_tip(this.carrot.lang.Val("emoji_tip", "Change emoji packs for calendar"));
         item_emoji_package.set_lang_data("emoji", "emoji_tip");
         item_emoji_package.set_act(() => this.emoji_manager.show_list_packer_emoji(item_emoji_package));
 
 
         Carrot_Box_Item item_remind_app = box_setting.create_item_of_top("remind_app");
-        item_remind_app.set_title(PlayerPrefs.GetString("remind_app", "Remind me to evaluate the calendar emotions"));
-        item_remind_app.set_tip(PlayerPrefs.GetString("remind_app_tip", "Enable or disable app usage reminder"));
+        item_remind_app.set_title(this.carrot.lang.Val("remind_app", "Remind me to evaluate the calendar emotions"));
+        item_remind_app.set_tip(this.carrot.lang.Val("remind_app_tip", "Enable or disable app usage reminder"));
         item_remind_app.set_lang_data("remind_app", "remind_app_tip");
         if (this.notice.get_status_remind_app())
             item_remind_app.set_icon(this.notice.sp_remind_on);
@@ -125,7 +126,7 @@ public class App : MonoBehaviour
         if (s_id_product == this.carrot.shop.get_id_by_index(1))
         {
             this.emoji_manager.on_buy_success_package();
-            this.carrot.Show_msg(PlayerPrefs.GetString("shop","Shop"),"Purchased icon pack success",Msg_Icon.Success);
+            this.carrot.Show_msg(this.carrot.lang.Val("shop","Shop"),"Purchased icon pack success",Msg_Icon.Success);
         }
     }
 
@@ -141,7 +142,7 @@ public class App : MonoBehaviour
 
     private void check_rotate()
     {
-        bool status_rotate_portrait= this.GetComponent<Carrot_DeviceOrientationChange>().get_status_portrait();
+        bool status_rotate_portrait= this.GetComponent<Carrot_DeviceOrientationChange>().Get_status_portrait();
         if (status_rotate_portrait)
         {
             this.calendar.set_width_item_calendar_year_month(150f);

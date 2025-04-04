@@ -5,8 +5,8 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/Scenes/Happy Diary.unity
-    guid: 7fe2dfa2f1f2fc543bb01816425b4069
+  - enabled: 1
+    path: Assets/app.unity
+    guid: af4d68ba60e3113498abdf501ac2e03f
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0

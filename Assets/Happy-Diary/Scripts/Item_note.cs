@@ -15,7 +15,7 @@ public class Item_note : MonoBehaviour
 
     public void btn_delete()
     {
-        GameObject.Find("App").GetComponent<App>().carrot.Show_msg(PlayerPrefs.GetString("note", "Note"), PlayerPrefs.GetString("del_tip", "Are you sure delete this selected item?"),this.act_del_yes,this.act_del_no);
+        GameObject.Find("App").GetComponent<App>().carrot.Show_msg(this.GetComponent<App>().carrot.lang.Val("note", "Note"), this.GetComponent<App>().carrot.lang.Val("del_tip", "Are you sure delete this selected item?"),this.act_del_yes,this.act_del_no);
     }
 
     private void act_del_yes()

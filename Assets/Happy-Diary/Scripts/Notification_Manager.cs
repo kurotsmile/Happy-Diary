@@ -232,7 +232,7 @@ public class Notification_Manager : MonoBehaviour
         {
             var notification = new AndroidNotification();
             notification.Title = "Happy Diary";
-            notification.Text =PlayerPrefs.GetString("app_reminder_notice_tip","Don't forget to write down how you feel today!");
+            notification.Text =this.GetComponent<App>().carrot.lang.Val("app_reminder_notice_tip","Don't forget to write down how you feel today!");
             notification.FireTime = DateTime.Now.AddHours(23);
             notification.RepeatInterval = new TimeSpan(1, 0, 0, 0);
             this.id_notice_remind_app= AndroidNotificationCenter.SendNotification(notification, "alert_event");

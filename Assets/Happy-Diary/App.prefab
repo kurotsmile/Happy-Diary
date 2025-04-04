@@ -2343,6 +2343,7 @@ GameObject:
   - component: {fileID: 4180226745717388895}
   - component: {fileID: 6111284805416865237}
   - component: {fileID: 8038320582781958875}
+  - component: {fileID: 577559194926627090}
   m_Layer: 0
   m_Name: App
   m_TagString: Untagged
@@ -2384,6 +2385,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   carrot: {fileID: 0}
+  ads: {fileID: 577559194926627090}
   calendar: {fileID: 860383986805353231}
   view_day: {fileID: 8917295160611103231}
   sound:
@@ -2638,6 +2640,8 @@ MonoBehaviour:
   OnOrientationChange:
     m_PersistentCalls:
       m_Calls: []
+  resolution: {x: 0, y: 0}
+  orientation: 0
   emp_portrait: []
   emp_Landscape: []
   is_load_on_start: 1
@@ -2731,6 +2735,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f742a16bd4d4e7644ba7f1fe59602ee5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &577559194926627090
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1408437256934928586}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9793e40d5c47ce428af3980dce63a3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  count_step_show_interstitial: 5
+  emplement_Ads: []
+  app_key: 
+  id_banner: 
+  id_video: 
+  id_rewarded: 
 --- !u!1 &1469505167411115245
 GameObject:
   m_ObjectHideFlags: 0
@@ -5108,6 +5130,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -8797,6 +8820,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: b946c0e1344876d4d83aace333c03774, type: 3}
+  m_Resource: {fileID: 8300000, guid: b946c0e1344876d4d83aace333c03774, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -12202,7 +12226,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 21d2eb2d8bfa66f4eb9363c2881a443b, type: 3}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 8300000, guid: 21d2eb2d8bfa66f4eb9363c2881a443b, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1

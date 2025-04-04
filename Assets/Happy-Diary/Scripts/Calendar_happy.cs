@@ -513,7 +513,7 @@ public class Calendar_happy : MonoBehaviour
         {
             GameObject item_status_day = box_status.add_item(this.item_status_day_in_month_prefab);
             item_status_day.GetComponent<Item_status_day>().icon.sprite = this.GetComponent<App>().view_day.sp_emoji[list_data_emoji[i].index];
-            item_status_day.GetComponent<Item_status_day>().txt_count_day.text = list_data_emoji[i].count.ToString()+" "+PlayerPrefs.GetString("day","Day");
+            item_status_day.GetComponent<Item_status_day>().txt_count_day.text = list_data_emoji[i].count.ToString()+" "+this.GetComponent<App>().carrot.lang.Val("day","Day");
             item_status_day.GetComponent<Item_status_day>().txt_status_day.text = this.GetComponent<App>().view_day.get_label_emoji(list_data_emoji[i].index);
         }
         box_status.update_gamepad_cosonle_control();
@@ -523,14 +523,14 @@ public class Calendar_happy : MonoBehaviour
     {
         GameObject item_notice_menu = box_status.add_item(this.item_notice_menu_prefab);
         item_notice_menu.GetComponent<Item_notice>().set_sel_menu(index_menu_sel);
-        item_notice_menu.GetComponent<Item_notice>().txt_title.text = PlayerPrefs.GetString("list_notice_month", "List of events scheduled for the month");
-        item_notice_menu.GetComponent<Item_notice>().txt_tip.text = PlayerPrefs.GetString("list_notice_all", "List of all events");
+        item_notice_menu.GetComponent<Item_notice>().txt_title.text = this.GetComponent<App>().carrot.lang.Val("list_notice_month", "List of events scheduled for the month");
+        item_notice_menu.GetComponent<Item_notice>().txt_tip.text = this.GetComponent<App>().carrot.lang.Val("list_notice_all", "List of all events");
     }
 
     public void btn_show_list_notice()
     {
         if (this.box_status != null) this.box_status.close();
-        this.box_status=this.GetComponent<App>().carrot.Create_Box(PlayerPrefs.GetString("list_notice_month", "List of events scheduled for the month"), this.sp_icon_list_notice);
+        this.box_status=this.GetComponent<App>().carrot.Create_Box(this.GetComponent<App>().carrot.lang.Val("list_notice_month", "List of events scheduled for the month"), this.sp_icon_list_notice);
         this.add_menu_notice_prefab(0);
 
         for (int i = 0; i < this.list_notice.Count; i++)
@@ -552,7 +552,7 @@ public class Calendar_happy : MonoBehaviour
     public void btn_show_list_all_notice()
     {
         if(this.box_status!=null) this.box_status.close();
-        this.box_status = this.GetComponent<App>().carrot.Create_Box(PlayerPrefs.GetString("list_notice_all", "List of all events"), this.sp_icon_list_notice);
+        this.box_status = this.GetComponent<App>().carrot.Create_Box(this.GetComponent<App>().carrot.lang.Val("list_notice_all", "List of all events"), this.sp_icon_list_notice);
 
         if (this.type_show == 0) this.add_menu_notice_prefab(1);
 
@@ -577,7 +577,7 @@ public class Calendar_happy : MonoBehaviour
 
     public void btn_show_list_note()
     {
-        Carrot_Box box_notice=this.GetComponent<App>().carrot.Create_Box(PlayerPrefs.GetString("list_note_month","List of notes for the month"), this.sp_icon_list_notice);
+        Carrot_Box box_notice=this.GetComponent<App>().carrot.Create_Box(this.GetComponent<App>().carrot.lang.Val("list_note_month","List of notes for the month"), this.sp_icon_list_notice);
         for (int i = 0; i < this.list_note.Count; i++)
         {
             GameObject item_notice = box_notice.add_item(this.item_note_prefab);

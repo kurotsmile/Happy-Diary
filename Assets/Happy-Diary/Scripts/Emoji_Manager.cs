@@ -25,7 +25,7 @@ public class Emoji_Manager : MonoBehaviour
     public void show_list_packer_emoji(Carrot_Box_Item item_emoji)
     {
         this.item_emoji_setting = item_emoji;
-        this.box_emoji=this.GetComponent<App>().carrot.Create_Box(PlayerPrefs.GetString("emoji","List package emojo"), this.icon_package_emoji);
+        this.box_emoji=this.GetComponent<App>().carrot.Create_Box(this.GetComponent<App>().carrot.lang.Val("emoji","List package emojo"), this.icon_package_emoji);
         this.GetComponent<App>().play_sound();
 
         if (this.sel_index_emoji == -1) this.sel_index_emoji = 0;

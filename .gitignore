@@ -63,3 +63,6 @@ sysinfo.txt
 
 # Crashlytics generated file
 crashlytics-build.properties
+/.utmp
+/Assets/LevelPlay
+/Assets/LevelPlay

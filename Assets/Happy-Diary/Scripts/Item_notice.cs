@@ -40,7 +40,7 @@ public class Item_notice : MonoBehaviour
 
     public void btn_delete()
     {
-        this.msg_question=GameObject.Find("App").GetComponent<App>().carrot.Show_msg(PlayerPrefs.GetString("appointment_schedule", "Appointment schedule"), PlayerPrefs.GetString("event_delete_question","Are you sure you want to delete this event reminder?"),this.act_yes_delete, act_no_delete);
+        this.msg_question=GameObject.Find("App").GetComponent<App>().carrot.Show_msg(this.GetComponent<App>().carrot.lang.Val("appointment_schedule", "Appointment schedule"), this.GetComponent<App>().carrot.lang.Val("event_delete_question","Are you sure you want to delete this event reminder?"),this.act_yes_delete, act_no_delete);
     }
 
     private void act_yes_delete()

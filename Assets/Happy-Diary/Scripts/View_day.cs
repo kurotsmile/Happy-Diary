@@ -62,7 +62,7 @@ public class View_day : MonoBehaviour
     public void show(Calendar_item c, int type_show = -1)
     {
         this.item_calendar_temp = c;
-        this.GetComponent<App>().ads.Destroy_Banner_Ad();
+        this.GetComponent<App>().ads.DestroyBannerAd();
         this.GetComponent<App>().ads.show_ads_Interstitial();
 
         this.txt_title_view_day.text = c.get_datetime().ToString("dddd dd/MMMM/yyyy");
@@ -377,7 +377,7 @@ public class View_day : MonoBehaviour
 
     public void show_camera()
     {
-        this.GetComponent<App>().carrot.camera_pro.show_camera(act_done_camera);
+        this.GetComponent<App>().carrot.camera_pro.Show_camera(act_done_camera);
     }
 
     private void act_done_camera(Texture2D texture2d)
@@ -389,7 +389,7 @@ public class View_day : MonoBehaviour
 
     public void close()
     {
-        this.GetComponent<App>().carrot.ads.create_banner_ads();
+        this.GetComponent<App>().ads.ShowBannerAd();
         this.panel_view_day.SetActive(false);
         this.GetComponent<App>().play_sound();
     }
@@ -483,7 +483,7 @@ public class View_day : MonoBehaviour
     {
         if (intp_evenet_notice.text.Trim() == "")
         {
-            this.GetComponent<App>().carrot.show_msg(PlayerPrefs.GetString("appointment_schedule", "Appointment schedule"), PlayerPrefs.GetString("event_error", "Event name cannot be empty!"), Carrot.Msg_Icon.Error);
+            this.GetComponent<App>().carrot.Show_msg(this.GetComponent<App>().carrot.lang.Val("appointment_schedule", "Appointment schedule"), this.GetComponent<App>().carrot.lang.Val("event_error", "Event name cannot be empty!"), Carrot.Msg_Icon.Error);
             return;
         }
 
@@ -519,7 +519,7 @@ public class View_day : MonoBehaviour
     {
         if (intp_calendar_note.text.Trim() == "")
         {
-            this.GetComponent<App>().carrot.Show_msg(PlayerPrefs.GetString("note", "Note"), PlayerPrefs.GetString("note_error", "Notes cannot be left blank!"), Carrot.Msg_Icon.Error);
+            this.GetComponent<App>().carrot.Show_msg(this.GetComponent<App>().carrot.lang.Val("note", "Note"), this.GetComponent<App>().carrot.lang.Val("note_error", "Notes cannot be left blank!"), Carrot.Msg_Icon.Error);
             return;
         }
 
